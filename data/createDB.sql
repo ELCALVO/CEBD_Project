@@ -60,7 +60,7 @@ CREATE TABLE LesResultats
 -- TODO 1.2a : ajouter la définition de la vue LesSportifs
 CREATE VIEW LesSportifs
 AS
-    SELECT numSp,nomSp,prenomSp,pays,categorieSp,dateNaisSp,trunc(months_between(sysdate,dateNaisSp)/12) AS ageSp
+    SELECT numSp,nomSp,prenomSp,pays,categorieSp,dateNaisSp,(strftime('%Y','now') - strftime('%Y',dateNaisSp))-(strftime('%m-%d','now') < strftime('%m-%d',dateNaisSp)) AS ageSp
     FROM LesSportifs_base;
 -- TODO 1.3a : ajouter la création de la table LesDisciplines et ajouter l'attribut discipline dans la table LesEpreuves
 -- TODO 1.4a : ajouter la définition de la vue LesEquipes
