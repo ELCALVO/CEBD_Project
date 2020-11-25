@@ -1,3 +1,4 @@
+DROP VIEW IF EXISTS LesSportifs;
 DROP TABLE IF EXISTS LesResultats;
 DROP TABLE IF EXISTS LesInscriptions;
 DROP TABLE IF EXISTS LesEpreuves;
