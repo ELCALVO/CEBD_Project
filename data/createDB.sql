@@ -71,5 +71,10 @@ AS
 
 CREATE TABLE LesDisciplines(
 nomDi VARCHAR2(50) PRIMARY KEY
-)
+);
 -- TODO 1.4a : ajouter la définition de la vue LesEquipes
+CREATE VIEW LesEquipes
+AS
+    SELECT numEq,count(numSp) as nbEquipiersEq
+    FROM LesEquipiers
+    GROUP BY numEq;

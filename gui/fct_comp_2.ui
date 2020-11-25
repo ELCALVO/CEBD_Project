@@ -40,12 +40,26 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_fct_comp_2"/>
+      <widget class="QRadioButton" name="radioButton_3">
+       <property name="text">
+        <string>mixte</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_fct_comp_2">
+      <widget class="QRadioButton" name="radioButton_2">
        <property name="text">
-        <string>Valider</string>
+        <string>masculin</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton">
+       <property name="text">
+        <string>feminin</string>
        </property>
       </widget>
      </item>
@@ -109,18 +123,50 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton_fct_comp_2</sender>
+   <sender>radioButton_3</sender>
    <signal>clicked()</signal>
    <receiver>fct_comp_2</receiver>
    <slot>refreshResult()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>351</x>
-     <y>51</y>
+     <x>229</x>
+     <y>38</y>
     </hint>
     <hint type="destinationlabel">
-     <x>444</x>
-     <y>134</y>
+     <x>211</x>
+     <y>-60</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_comp_2</receiver>
+   <slot>refreshResult()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>457</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>427</x>
+     <y>-84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_comp_2</receiver>
+   <slot>refreshResult()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>638</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>626</x>
+     <y>-80</y>
     </hint>
    </hints>
   </connection>
