@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>378</height>
+    <height>379</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,14 +24,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_fct_comp_3"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Valider</string>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="comboBox_fct_comp_3"/>
      </item>
     </layout>
    </item>
@@ -106,18 +99,18 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
+   <sender>comboBox_fct_comp_3</sender>
+   <signal>currentTextChanged(QString)</signal>
    <receiver>fct_comp_3</receiver>
    <slot>refreshResult()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>364</x>
-     <y>52</y>
+     <x>430</x>
+     <y>17</y>
     </hint>
     <hint type="destinationlabel">
-     <x>444</x>
-     <y>81</y>
+     <x>419</x>
+     <y>-85</y>
     </hint>
    </hints>
   </connection>

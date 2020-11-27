@@ -19,10 +19,6 @@ class AppFctComp2(QDialog):
     @pyqtSlot()
     def refreshResult(self):
         # TODO 1.5 : fonction à modifier pour remplacer la zone de saisie par une liste de valeurs prédéfinies dans l'interface une fois le fichier ui correspondant mis à jour
-
-
-
-        self.ui.radioButton.isChecked()
         if self.ui.radioButton.isChecked():
             cat = self.ui.radioButton.text()
         elif self.ui.radioButton_2.isChecked():
