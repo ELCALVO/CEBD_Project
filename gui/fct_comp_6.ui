@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>fct_comp_5</class>
- <widget class="QDialog" name="fct_comp_5">
+ <class>fct_comp_6</class>
+ <widget class="QDialog" name="fct_comp_6">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTableWidget" name="table_fct_comp_5">
+    <widget class="QTableWidget" name="table_fct_comp_6">
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>200</number>
      </attribute>
@@ -30,18 +30,28 @@
      </attribute>
      <column>
       <property name="text">
-       <string>numEq</string>
+       <string>Pays</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>ageMoyen</string>
+       <string>nbOr</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>nbSilver</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>nbBronze</string>
       </property>
      </column>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="label_fct_comp_5">
+    <widget class="QLabel" name="label_fct_comp_6">
      <property name="text">
       <string/>
      </property>
