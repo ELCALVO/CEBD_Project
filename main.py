@@ -12,6 +12,7 @@ from actions.action_fct_comp_1 import AppFctComp1
 from actions.action_fct_comp_2 import AppFctComp2
 from actions.action_fct_comp_3 import AppFctComp3
 from actions.action_fct_comp_4 import AppFctComp4
+from actions.action_fct_comp_5 import AppFctComp5
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
 class AppWindow(QMainWindow):
@@ -30,6 +31,8 @@ class AppWindow(QMainWindow):
     fct_comp_2_dialog = None
     fct_comp_3_dialog = None
     fct_comp_4_dialog = None
+    fct_comp_5_dialog = None
+    fct_comp_6_dialog = None
 
     # Constructeur
     def __init__(self):
@@ -105,6 +108,18 @@ class AppWindow(QMainWindow):
     ####################################################################################################################
 
     # TODO 2 : ajouter la définition des méthodes déclenchées lors des clicks sur les boutons de la partie 2
+    def open_fct_comp_5(self):
+        if self.fct_comp_5_dialog is not None:
+            self.fct_comp_5_dialog.close()
+        self.fct_comp_5_dialog = AppFctComp5(self.data)
+        self.fct_comp_5_dialog.show()
+
+    def open_fct_comp_6(self):
+        if self.fct_comp_6_dialog is not None:
+            self.fct_comp_6_dialog.close()
+        self.fct_comp_6_dialog = AppFctComp6(self.data)
+        self.fct_comp_6_dialog.show()
+
     # TODO 3 : ajouter la définition des méthodes déclenchées lors des clicks sur les boutons de la partie 3
 
     # En cas de clic sur le bouton de visualisation des données
@@ -114,6 +129,7 @@ class AppWindow(QMainWindow):
         self.tablesDataDialog = AppTablesData(self.data)
         self.tablesDataDialog.show()
         self.changedValue.connect(self.tablesDataDialog.refreshAllTables)
+
 
     # En cas de clic sur la fonction fournie 1
     def open_fct_fournie_1(self):
@@ -185,6 +201,10 @@ class AppWindow(QMainWindow):
             self.fct_comp_3_dialog.close()
         if (self.fct_comp_4_dialog is not None):
             self.fct_comp_4_dialog.close()
+        if (self.fct_comp_5_dialog is not None):
+            self.fct_comp_5_dialog.close()
+        if (self.fct_comp_6_dialog is not None):
+            self.fct_comp_6_dialog.close()
 
         # On ferme proprement la base de données
         self.data.close()
