@@ -1,3 +1,6 @@
+DROP TRIGGER IF EXISTS only100equipes;
+DROP TRIGGER IF EXISTS only500sportifs;
+
 DROP VIEW IF EXISTS LesEquipes;
 DROP VIEW IF EXISTS LesSportifs;
 

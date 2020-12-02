@@ -68,6 +68,24 @@ class AppWindow(QMainWindow):
             self.data.commit()
             # On émet le signal indiquant la modification de la table
             self.changedValue.emit()
+            self.createTriggerDB()
+
+    def createTriggerDB(self):
+
+        try:
+            # On exécute les requêtes du fichier d'insertion
+            db.updateTriggerfile(self.data, "data/createTriggerDB.sql")
+
+        except Exception as e:
+            # En cas d'erreur, on affiche un message
+            display.refreshLabel(self.ui.label_2, "L'erreur suivante s'est produite lors de la creation des triggers : "+repr(e)+".")
+
+        else:
+            # Si tout s'est bien passé, on affiche le message de succès et on commit
+            display.refreshLabel(self.ui.label_2, "Un jeu de test a été inséré dans la base avec succès.")
+            self.data.commit()
+            # On émet le signal indiquant la modification de la table
+            self.changedValue.emit()
 
     # En cas de clic sur le bouton d'insertion de données
     def insertDB(self):
@@ -86,6 +104,8 @@ class AppWindow(QMainWindow):
             self.data.commit()
             # On émet le signal indiquant la modification de la table
             self.changedValue.emit()
+
+
 
     # En cas de clic sur le bouton de suppression de la base
     def deleteDB(self):
