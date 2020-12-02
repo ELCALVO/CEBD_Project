@@ -1108,6 +1108,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_14</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_fct_gerer_resultats()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>836</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>60</x>
+     <y>788</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>signal1()</signal>
@@ -1125,5 +1141,6 @@
   <slot>open_fct_comp_4()</slot>
   <slot>open_fct_comp_5()</slot>
   <slot>open_fct_comp_6()</slot>
+  <slot>open_fct_gerer_resultats()</slot>
  </slots>
 </ui>

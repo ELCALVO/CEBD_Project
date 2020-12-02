@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fct_gerer_resultats</class>
+ <widget class="QDialog" name="fct_gerer_resultats">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>601</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gerer les resultats</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QRadioButton" name="radioButton_delete">
+         <property name="text">
+          <string>Delete</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_update">
+         <property name="text">
+          <string>Update</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_insert">
+         <property name="text">
+          <string>Insert</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Numero de l'epreuve</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_numEp">
+           <property name="maxVisibleItems">
+            <number>499</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>1er (medaille or)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_gold">
+           <property name="maxVisibleItems">
+            <number>499</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>2eme (medaille argent)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_silver">
+           <property name="maxVisibleItems">
+            <number>499</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>3eme (medaille bronze)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_bronze">
+           <property name="maxVisibleItems">
+            <number>499</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="validation">
+           <property name="text">
+            <string>Valider</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_erreur">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>comboBox_numEp</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshNumeroEquipe()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>40</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>validation</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshResult()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>503</x>
+     <y>544</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>744</x>
+     <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_update</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshNumeroEpreuve()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>313</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>26</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_insert</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshNumeroEpreuve()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>597</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>608</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_delete</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshNumeroEpreuve()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>43</x>
+     <y>80</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_silver</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshBronze()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>457</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>205</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_gold</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshSilver()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>401</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>414</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>refreshNumeroEquipe()</slot>
+  <slot>refreshResult()</slot>
+  <slot>refreshNumeroEpreuve()</slot>
+  <slot>refreshBronze()</slot>
+  <slot>refreshSilver()</slot>
+ </slots>
+</ui>
