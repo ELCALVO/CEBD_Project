@@ -15,6 +15,7 @@ from actions.action_fct_comp_4 import AppFctComp4
 from actions.action_fct_comp_5 import AppFctComp5
 from actions.action_fct_comp_6 import AppFctComp6
 from actions.action_fct_gerer_resultats import AppFctGererResultats
+from actions.action_fct_gerer_inscriptions import AppFctGererInscriptions
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
 class AppWindow(QMainWindow):
@@ -36,6 +37,7 @@ class AppWindow(QMainWindow):
     fct_comp_5_dialog = None
     fct_comp_6_dialog = None
     fct_gerer_resultats_dialog = None
+    fct_gerer_inscriptions_dialog = None
 
     # Constructeur
     def __init__(self):
@@ -144,6 +146,12 @@ class AppWindow(QMainWindow):
         self.fct_comp_6_dialog.show()
 
     # TODO 3 : ajouter la définition des méthodes déclenchées lors des clicks sur les boutons de la partie 3
+    def open_fct_gerer_inscriptions(self):
+        if self.fct_gerer_inscriptions_dialog is not None:
+            self.fct_gerer_inscriptions_dialog.close()
+        self.fct_gerer_inscriptions_dialog = AppFctGererInscriptions(self.data)
+        self.fct_gerer_inscriptions_dialog.show()
+
     def open_fct_gerer_resultats(self):
         if self.fct_gerer_resultats_dialog is not None:
             self.fct_gerer_resultats_dialog.close()
@@ -235,6 +243,8 @@ class AppWindow(QMainWindow):
             self.fct_comp_6_dialog.close()
         if (self.fct_gerer_resultats_dialog is not None):
             self.fct_gerer_resultats_dialog.close()
+        if (self.fct_gerer_inscriptions_dialog is not None):
+            self.fct_gerer_inscriptions_dialog.close()
 
         # On ferme proprement la base de données
         self.data.close()

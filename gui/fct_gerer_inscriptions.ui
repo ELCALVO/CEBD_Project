@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fct_gerer_resultats</class>
+ <widget class="QDialog" name="fct_gerer_resultats">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>601</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gerer les inscriptions</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QRadioButton" name="radioButton">
+         <property name="text">
+          <string>Insertion dans Inscription sans creation de nouvelle epreuve</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_insert">
+         <property name="text">
+          <string>Insert+ Creation nouvelle Epreuve</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Nom de l'epreuve (utile si et seulement si on insere en creant une nouvelle epreuve)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_nomEp"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Forme de l'epreuve</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_formeEp">
+           <property name="maxVisibleItems">
+            <number>499</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Categorie de l'epreuve</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_categorieEp"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Numero d'inscrit</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_numIn"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Nom de la discipline</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_nomDi"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Nombre de sportifs</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBox_nbSportifs">
+           <property name="minimum">
+            <number>2</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Date de l'epreuve</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="dateEdit">
+           <property name="minimumDateTime">
+            <datetime>
+             <hour>0</hour>
+             <minute>0</minute>
+             <second>0</second>
+             <year>2020</year>
+             <month>12</month>
+             <day>2</day>
+            </datetime>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Numéro d'epreuve (utile si et seulement si on insere sans creation de nouvelle epreuve)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_numEp"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_erreur">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="validation">
+           <property name="text">
+            <string>Valider</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>radioButton_insert</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshInit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>838</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>608</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>validation</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshResult()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>515</x>
+     <y>588</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>744</x>
+     <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_categorieEp</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshNumInscrit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>358</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>387</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_formeEp</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshNbSportifs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>196</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshNumEpreuve()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>56</x>
+     <y>15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_numIn</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshNumEpreuve()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>52</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>323</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>refreshNumeroEquipe()</slot>
+  <slot>refreshResult()</slot>
+  <slot>refreshInit()</slot>
+  <slot>refreshDisciplineEp()</slot>
+  <slot>refreshCategorieEp()</slot>
+  <slot>refreshFormeEp()</slot>
+  <slot>refreshNbSportifs()</slot>
+  <slot>refreshNumInscrit()</slot>
+  <slot>refreshNumEpreuve()</slot>
+ </slots>
+</ui>
