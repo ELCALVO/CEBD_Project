@@ -78,3 +78,23 @@ AS
     SELECT numEq,count(numSp) as nbEquipiersEq
     FROM LesEquipiers
     GROUP BY numEq;
+
+
+-- TRIGGERS :
+CREATE TRIGGER IF NOT EXISTS only100sportifs
+	BEFORE INSERT on lesSportifs
+    	BEGIN
+        	SELECT CASE
+            	WHEN ((SELECT count(*) FROM lesSportifs) > 100)
+                   THEN RAISE(ABORT,'Pas plus de 100 sportifs dans la table lesSportifs')
+                END;
+END;
+
+CREATE TRIGGER IF NOT EXISTS only500equipes
+	BEFORE INSERT on lesEquipes
+    	BEGIN
+        	SELECT CASE
+            	WHEN ((SELECT count(*) FROM lesEquipes) > 500)
+                   THEN RAISE(ABORT,'Pas plus de 500 équipes dans la table lesEquipes')
+                END;
+END;
