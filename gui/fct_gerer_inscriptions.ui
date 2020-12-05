@@ -42,7 +42,7 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="label_nomEp">
            <property name="text">
             <string>Nom de l'epreuve (utile si et seulement si on insere en creant une nouvelle epreuve)</string>
            </property>
@@ -131,7 +131,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_8">
+          <widget class="QLabel" name="label_numEp">
            <property name="text">
             <string>Numéro d'epreuve (utile si et seulement si on insere sans creation de nouvelle epreuve)</string>
            </property>
@@ -257,6 +257,70 @@
     <hint type="destinationlabel">
      <x>323</x>
      <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_formeEp</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshCategorieEp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>206</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>548</x>
+     <y>26</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_numEp</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshDisciplineEp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>530</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_formeEp</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshDisciplineEp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>712</x>
+     <y>261</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>726</x>
+     <y>26</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_categorieEp</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>fct_gerer_resultats</receiver>
+   <slot>refreshDisciplineEp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>673</x>
+     <y>304</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>690</x>
+     <y>21</y>
     </hint>
    </hints>
   </connection>

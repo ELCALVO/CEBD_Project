@@ -36,6 +36,7 @@ class AppFctGererResultats(QDialog):
             display.refreshLabel(self.ui.label_erreur, "Impossible de gerer l'insertion/update ou deletion : " + repr(e))
         else:
             display.refreshLabel(self.ui.label_erreur, "Operation effectué avec succès")
+            self.data.commit()
 
 
 
